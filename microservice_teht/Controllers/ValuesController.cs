@@ -87,7 +87,7 @@ namespace microservice_teht.Controllers
             _logger.LogInformation("added " + counter + " new entries");
             //_electricityDbContext.ElectricityPriceDatas.OrderBy(e => e.StartDate);
             await _electricityDbContext.SaveChangesAsync();
-            return counter.ToString()+" new entries added, "+data2.Prices.Count+" entries total";
+            return data2.Prices.Count+" entries fetched, not adding duplicates: "+counter.ToString()+" new entries added";
         }
         
         [Route("cleartable")]
